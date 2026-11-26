@@ -15,6 +15,7 @@ class StoreUserRequest extends FormRequest
 
     public function rules(): array
     {
+        // Abaikan ID user saat ini agar update sebagian tidak dianggap duplikat.
         $userParam = $this->route('user');
         $userId = $userParam instanceof User ? $userParam->id : $userParam;
         $isPartial = $this->isMethod('PATCH');

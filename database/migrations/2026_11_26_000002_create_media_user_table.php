@@ -14,6 +14,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
 
+            // Cegah pasangan media dan user yang sama tercatat dua kali di tabel pivot.
             $table->unique(['media_id', 'user_id']);
         });
     }

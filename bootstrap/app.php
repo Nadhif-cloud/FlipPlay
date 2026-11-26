@@ -17,7 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        // Force JSON error responses on /api/* even if Postman omits Accept: application/json.
+        // Paksa error pada route /api/* tetap berupa JSON meski header Accept belum diset.
         $exceptions->shouldRenderJsonWhen(
             fn (Request $request) => $request->is('api/*') || $request->expectsJson(),
         );

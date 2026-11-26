@@ -4,7 +4,7 @@ use App\Http\Controllers\MediaController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-// Override parameter singularization so /api/media/{media} binds Media $media instead of {medium}.
+// Ubah parameter default {medium} menjadi {media} agar cocok dengan variabel Media $media.
 Route::apiResource('media', MediaController::class)->parameters([
     'media' => 'media',
 ]);

@@ -21,6 +21,7 @@ class MediaResource extends JsonResource
             'status' => $this->status,
             'release_year' => $this->release_year,
             'collectors_count' => $this->whenCounted('users'),
+            // Daftar pengoleksi hanya muncul jika relasi users sudah dimuat lewat load() atau with().
             'collected_by' => UserResource::collection($this->whenLoaded('users')),
             'added_to_collection_at' => $this->whenPivotLoaded(
                 'media_user',

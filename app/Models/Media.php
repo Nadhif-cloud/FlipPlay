@@ -14,7 +14,7 @@ class Media extends Model
     /** @use HasFactory<MediaFactory> */
     use HasFactory;
 
-    // Explicit table name avoids singular/plural ambiguity between medium and media.
+    // Nama tabel ditulis eksplisit agar tidak tertukar dengan bentuk tunggal medium.
     protected $table = 'media';
 
     protected $fillable = [
@@ -33,7 +33,7 @@ class Media extends Model
         'release_year' => 'integer',
     ];
 
-    // Preserves Modul 3 Anime (Episode) vs Manga (Volume) formatting via Eloquent accessor.
+    // Format angka menjadi Episode (Anime) atau Volume (Manga) sesuai konsep Modul 3.
     protected function unitLabel(): Attribute
     {
         return Attribute::make(

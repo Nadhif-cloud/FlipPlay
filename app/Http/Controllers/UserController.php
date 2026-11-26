@@ -75,7 +75,7 @@ class UserController extends Controller
     {
         $mediaId = (int) $request->validated('media_id');
 
-        // Lock the user row inside a transaction to prevent concurrent duplicate collection inserts.
+        // Kunci baris user dalam transaksi untuk mencegah duplikasi koleksi saat request bersamaan.
         return DB::transaction(function () use ($user, $mediaId): JsonResponse {
             $lockedUser = User::where('id', $user->id)
                 ->lockForUpdate()

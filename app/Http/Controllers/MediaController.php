@@ -13,7 +13,7 @@ class MediaController extends Controller
 {
     public function index(Request $request): AnonymousResourceCollection
     {
-        // Accept both ?title= and ?search= query parameters for title filtering in Postman.
+        // Mendukung filter judul lewat query ?title= maupun ?search=.
         $keyword = $request->query('title', $request->query('search'));
         $type = $request->query('type');
 

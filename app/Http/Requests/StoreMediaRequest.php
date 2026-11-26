@@ -15,6 +15,7 @@ class StoreMediaRequest extends FormRequest
 
     public function rules(): array
     {
+        // Pada PATCH hanya validasi kolom yang dikirim, dan abaikan ID sendiri saat cek judul unik.
         $mediaParam = $this->route('media');
         $mediaId = $mediaParam instanceof Media ? $mediaParam->id : $mediaParam;
         $isPartial = $this->isMethod('PATCH');
