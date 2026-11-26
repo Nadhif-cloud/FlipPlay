@@ -1,4 +1,4 @@
-<?php
+<?php // Mendaftarkan perintah kustom Artisan yang dijalankan lewat terminal.
 
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;

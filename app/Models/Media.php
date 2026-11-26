@@ -1,4 +1,4 @@
-<?php
+<?php // Model Eloquent untuk tabel media beserta relasi pengoleksi, accessor, dan filter judul.
 
 namespace App\Models;
 

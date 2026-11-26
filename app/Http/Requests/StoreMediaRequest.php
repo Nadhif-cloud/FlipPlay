@@ -1,4 +1,4 @@
-<?php
+<?php // Validasi input tambah (POST) dan ubah (PATCH) data media agar sesuai aturan.
 
 namespace App\Http\Requests;
 

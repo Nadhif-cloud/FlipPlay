@@ -1,4 +1,4 @@
-<?php
+<?php // Mengatur jalur routing utama (web dan api), middleware, serta penanganan error JSON.
 
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;

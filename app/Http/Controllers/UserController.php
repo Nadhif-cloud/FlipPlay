@@ -1,4 +1,4 @@
-<?php
+<?php // Controller untuk CRUD pengguna serta custom action tambah dan hapus koleksi media.
 
 namespace App\Http\Controllers;
 

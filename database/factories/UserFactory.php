@@ -1,4 +1,4 @@
-<?php
+<?php // Generator data palsu (dummy) otomatis untuk pengujian model User.
 
 namespace Database\Factories;
 

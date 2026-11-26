@@ -1,4 +1,4 @@
-<?php
+<?php // Model Eloquent untuk tabel users beserta relasi koleksi media milik pengguna.
 
 namespace App\Models;
 

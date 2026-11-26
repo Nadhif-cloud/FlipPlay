@@ -1,4 +1,4 @@
-<?php
+<?php // Mengatur format output JSON data media dan daftar pengoleksinya agar konsisten.
 
 namespace App\Http\Resources;
 

@@ -1,4 +1,4 @@
-<?php
+<?php // Mengisi data awal pengguna, media, dan koleksi ke database saat perintah seed dijalankan.
 
 namespace Database\Seeders;
 

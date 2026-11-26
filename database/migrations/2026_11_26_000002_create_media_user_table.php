@@ -1,4 +1,4 @@
-<?php
+<?php // Migration tabel pivot media_user untuk menghubungkan relasi banyak-ke-banyak media dan user.
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;

@@ -1,4 +1,4 @@
-<?php
+<?php // Migration untuk membuat struktur tabel users di database.
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;

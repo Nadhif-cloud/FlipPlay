@@ -1,4 +1,4 @@
-<?php
+<?php // Validasi input tambah dan ubah data pengguna agar username serta email tetap unik.
 
 namespace App\Http\Requests;
 

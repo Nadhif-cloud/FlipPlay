@@ -1,4 +1,4 @@
-<?php
+<?php // Pengujian otomatis seluruh skenario berhasil dan gagal pada endpoint API FlipPlay.
 
 namespace Tests\Feature;
 

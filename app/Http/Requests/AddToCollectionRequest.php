@@ -1,4 +1,4 @@
-<?php
+<?php // Validasi input media_id saat menambahkan media ke koleksi pengguna.
 
 namespace App\Http\Requests;
 

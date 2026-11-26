@@ -1,4 +1,4 @@
-<?php
+<?php // Tempat mendaftarkan layanan dan konfigurasi global aplikasi saat Laravel dijalankan.
 
 namespace App\Providers;
 

@@ -1,4 +1,4 @@
-<?php
+<?php // Mendaftarkan seluruh alamat endpoint REST API untuk media, pengguna, dan koleksi.
 
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\UserController;

@@ -1,4 +1,4 @@
-<?php
+<?php // Controller untuk operasi CRUD katalog media dan filter pencarian judul.
 
 namespace App\Http\Controllers;
 
