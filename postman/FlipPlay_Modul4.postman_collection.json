@@ -1,0 +1,273 @@
+{
+  "info": {
+    "name": "FlipPlay REST API - Demo Modul 4",
+    "description": "Koleksi pengujian lengkap REST API FlipPlay (Happy Path dan Failure Path) untuk Demo Modul 4 Pemrograman Web.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Media CRUD & Filter (Happy Path)",
+      "item": [
+        {
+          "name": "1.1 Daftar Seluruh Media (GET /api/media)",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Accept", "value": "application/json" }
+            ],
+            "url": "{{base_url}}/api/media"
+          }
+        },
+        {
+          "name": "1.2 Cari Media Berdasarkan Judul (GET /api/media?title=Frieren)",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Accept", "value": "application/json" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/media?title=Frieren",
+              "host": ["{{base_url}}"],
+              "path": ["api", "media"],
+              "query": [
+                { "key": "title", "value": "Frieren" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "1.3 Detail Satu Media + Pengoleksi (GET /api/media/1)",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Accept", "value": "application/json" }
+            ],
+            "url": "{{base_url}}/api/media/1"
+          }
+        },
+        {
+          "name": "1.4 Tambah Media Baru (POST /api/media)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Accept", "value": "application/json" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Blue Period\",\n  \"type\": \"Manga\",\n  \"genre\": \"Drama, Slice of Life\",\n  \"creator\": \"Tsubasa Yamaguchi\",\n  \"synopsis\": \"Yatora Yaguchi menemukan minat mendalam terhadap seni lukis dan berjuang menembus ujian Geidai.\",\n  \"total_units\": 15,\n  \"status\": \"Ongoing\",\n  \"release_year\": 2017\n}"
+            },
+            "url": "{{base_url}}/api/media"
+          }
+        },
+        {
+          "name": "1.5 Update Sebagian Data Media (PATCH /api/media/5)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              { "key": "Accept", "value": "application/json" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"total_units\": 16,\n  \"status\": \"Ongoing\"\n}"
+            },
+            "url": "{{base_url}}/api/media/5"
+          }
+        },
+        {
+          "name": "1.6 Hapus Media (DELETE /api/media/5)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              { "key": "Accept", "value": "application/json" }
+            ],
+            "url": "{{base_url}}/api/media/5"
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Pengguna & Koleksi Media (Happy Path)",
+      "item": [
+        {
+          "name": "2.1 Daftar Seluruh Pengguna (GET /api/users)",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Accept", "value": "application/json" }
+            ],
+            "url": "{{base_url}}/api/users"
+          }
+        },
+        {
+          "name": "2.2 Tambah Pengguna Baru (POST /api/users)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Accept", "value": "application/json" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Bagas Saputra\",\n  \"username\": \"bagassaputra\",\n  \"email\": \"bagas@flipplay.test\"\n}"
+            },
+            "url": "{{base_url}}/api/users"
+          }
+        },
+        {
+          "name": "2.3 Detail Pengguna + Koleksinya (GET /api/users/1)",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Accept", "value": "application/json" }
+            ],
+            "url": "{{base_url}}/api/users/1"
+          }
+        },
+        {
+          "name": "2.4 Tampilkan Koleksi Pribadi Pengguna (GET /api/users/1/collection)",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Accept", "value": "application/json" }
+            ],
+            "url": "{{base_url}}/api/users/1/collection"
+          }
+        },
+        {
+          "name": "2.5 Tambah Media ke Koleksi Pengguna (POST /api/users/1/collection)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Accept", "value": "application/json" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"media_id\": 2\n}"
+            },
+            "url": "{{base_url}}/api/users/1/collection"
+          }
+        },
+        {
+          "name": "2.6 Hapus Media dari Koleksi Pengguna (DELETE /api/users/1/collection/2)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              { "key": "Accept", "value": "application/json" }
+            ],
+            "url": "{{base_url}}/api/users/1/collection/2"
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Pengujian Skenario Gagal (Failure Path)",
+      "item": [
+        {
+          "name": "3.1 Gagal Tambah Media: Judul Kosong (422)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Accept", "value": "application/json" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"\",\n  \"type\": \"Anime\",\n  \"genre\": \"Action\",\n  \"creator\": \"Tatsuya Endo\",\n  \"total_units\": 12,\n  \"status\": \"Ongoing\"\n}"
+            },
+            "url": "{{base_url}}/api/media"
+          }
+        },
+        {
+          "name": "3.2 Gagal Tambah Media: Judul Duplikat (422)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Accept", "value": "application/json" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"SPY x FAMILY\",\n  \"type\": \"Anime\",\n  \"genre\": \"Action, Comedy\",\n  \"creator\": \"Tatsuya Endo\",\n  \"total_units\": 37,\n  \"status\": \"Ongoing\"\n}"
+            },
+            "url": "{{base_url}}/api/media"
+          }
+        },
+        {
+          "name": "3.3 Gagal Tambah Media: Jenis Tidak Valid (422)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Accept", "value": "application/json" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Solo Leveling\",\n  \"type\": \"LightNovel\",\n  \"genre\": \"Action\",\n  \"creator\": \"Chugong\",\n  \"total_units\": 14,\n  \"status\": \"Completed\"\n}"
+            },
+            "url": "{{base_url}}/api/media"
+          }
+        },
+        {
+          "name": "3.4 Gagal Detail Media: ID Tidak Ditemukan (404)",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Accept", "value": "application/json" }
+            ],
+            "url": "{{base_url}}/api/media/999"
+          }
+        },
+        {
+          "name": "3.5 Gagal Tambah Koleksi: Media Sama Dua Kali (409 Conflict)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Accept", "value": "application/json" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"media_id\": 1\n}"
+            },
+            "url": "{{base_url}}/api/users/1/collection"
+          }
+        },
+        {
+          "name": "3.6 Gagal Tambah Koleksi: Media ID Tidak Ada (422)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Accept", "value": "application/json" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"media_id\": 999\n}"
+            },
+            "url": "{{base_url}}/api/users/1/collection"
+          }
+        },
+        {
+          "name": "3.7 Gagal Hapus Koleksi: Media Belum Dikoleksi User (404)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              { "key": "Accept", "value": "application/json" }
+            ],
+            "url": "{{base_url}}/api/users/1/collection/4"
+          }
+        }
+      ]
+    }
+  ]
+}
