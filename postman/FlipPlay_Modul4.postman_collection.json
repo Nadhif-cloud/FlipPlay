@@ -68,7 +68,22 @@
           }
         },
         {
-          "name": "1.5 Update Sebagian Data Media (PATCH /api/media/5)",
+          "name": "1.5 Update Seluruh Data Media (PUT /api/media/5)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Accept", "value": "application/json" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Blue Period\",\n  \"type\": \"Manga\",\n  \"genre\": \"Drama, Art, Slice of Life\",\n  \"creator\": \"Tsubasa Yamaguchi\",\n  \"synopsis\": \"Perjuangan Yatora Yaguchi mendalami seni lukis hingga berkuliah di Geidai.\",\n  \"total_units\": 15,\n  \"status\": \"Ongoing\",\n  \"release_year\": 2017\n}"
+            },
+            "url": "{{base_url}}/api/media/5"
+          }
+        },
+        {
+          "name": "1.6 Update Sebagian Data Media (PATCH /api/media/5)",
           "request": {
             "method": "PATCH",
             "header": [
@@ -83,7 +98,7 @@
           }
         },
         {
-          "name": "1.6 Hapus Media (DELETE /api/media/5)",
+          "name": "1.7 Hapus Media (DELETE /api/media/5)",
           "request": {
             "method": "DELETE",
             "header": [

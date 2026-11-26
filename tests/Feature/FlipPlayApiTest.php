@@ -87,6 +87,19 @@ class FlipPlayApiTest extends TestCase
         $this->getJson('/api/media/9999')
             ->assertStatus(404);
 
+        $this->putJson("/api/media/{$frieren->id}", [
+            'title' => "Frieren: Beyond Journey's End",
+            'type' => 'Anime',
+            'genre' => 'Adventure, Fantasy, Drama',
+            'creator' => 'Kanehito Yamada',
+            'synopsis' => 'Perjalanan penyihir elf setelah era pahlawan usai.',
+            'total_units' => 29,
+            'status' => 'Completed',
+            'release_year' => 2023,
+        ])
+            ->assertStatus(200)
+            ->assertJsonPath('data.total_units', 29);
+
         $this->patchJson("/api/media/{$frieren->id}", ['total_units' => 30])
             ->assertStatus(200)
             ->assertJsonPath('data.total_units', 30)

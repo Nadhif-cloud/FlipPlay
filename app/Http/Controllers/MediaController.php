@@ -38,7 +38,7 @@ class MediaController extends Controller
     }
 
     public function show(Media $media): MediaResource
-    {
+    {   //eager loading data pengoleksinya langsung terambil sekaligus
         $media->load('users')->loadCount('users');
 
         return new MediaResource($media);
